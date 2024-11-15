@@ -1,9 +1,7 @@
 return {
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
+    opts = {},
   },
   -- override nvim-cmp and add cmp-emoji
   {
