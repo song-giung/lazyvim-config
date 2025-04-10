@@ -3,16 +3,16 @@
 -- Add any additional keymaps here
 
 if vim.g.vscode then
-    local keymap = vim.keymap.set
-    local opts = { noremap = true, silent = true }
+  local keymap = vim.keymap.set
+  local opts = { noremap = true, silent = true }
 
-    -- remap leader key
-    keymap("n", "<Space>", "", opts)
-    vim.g.mapleader = " "
-    vim.g.maplocalleader =nn "
+  -- remap leader key
+  keymap("n", "<Space>", "", opts)
+  vim.g.mapleader = " "
+  vim.g.maplocalleader = " "
 
-    -- rename symbol
-    vim.keymap.set("n", "<leader>rn", function()
-        vim.fn.VSCodeNotify("editor.action.rename")
-    end, { desc = "Rename Symbol" })
+  -- rename symbol
+  vim.keymap.set("n", "<leader>rn", function()
+    vim.fn.VSCodeNotify("editor.action.rename")
+  end, { desc = "Rename Symbol" })
 end
