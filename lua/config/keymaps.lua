@@ -5,6 +5,7 @@
 if vim.g.vscode then
   local keymap = vim.keymap.set
   local opts = { noremap = true, silent = true }
+  local vscode = require("vscode")
 
   -- remap leader key
   keymap("n", "<Space>", "", opts)
@@ -13,6 +14,10 @@ if vim.g.vscode then
 
   -- rename symbol
   vim.keymap.set("n", "<leader>rn", function()
-    vim.fn.VSCodeNotify("editor.action.rename")
+    vscode.call("editor.action.rename")
   end, { desc = "Rename Symbol" })
+
+  vim.keymap.set("n", "<leader>ca", function()
+    vscode.call("github.copilot.completions.toggle")
+  end, { desc = "Toggle copilot copletion" })
 end
