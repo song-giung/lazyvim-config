@@ -20,4 +20,8 @@ if vim.g.vscode then
   vim.keymap.set("n", "<leader>ca", function()
     vscode.call("github.copilot.completions.toggle")
   end, { desc = "Toggle copilot copletion" })
+else
+  local keymap = vim.keymap.set
+  local opts = { noremap = true, silent = true }
+  keymap("i", "jk", "<Esc>", opts)
 end
